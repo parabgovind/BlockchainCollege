@@ -1,0 +1,25 @@
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.PrivateKey;
+import java.security.PublicKey;
+
+public class KeyGenerator {
+    public static void main(String args[]) throws Exception{
+         
+         KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("DSA");
+         
+         keyPairGen.initialize(2048);
+         
+         KeyPair pair = keyPairGen.generateKeyPair();
+         
+         PrivateKey privKey = pair.getPrivate();
+         
+         PublicKey publicKey = pair.getPublic();
+         
+         System.out.println("Keys Generated");
+         
+         System.out.println("Private key = "+privKey);
+         
+         System.out.println("Public key = "+publicKey);
+    }
+}
